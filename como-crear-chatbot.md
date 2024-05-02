@@ -1,4 +1,4 @@
-# Creación de Chat Bot en 10 pasos
+# Creación de Chat Bot en 4 pasos 📱
 
 
 ### Introducción
@@ -21,7 +21,7 @@ Conocimientos de **Java Script y React Native**
 **Android Studio** y un emulador ya descargado desde esta plataforma además de su API 
  
 
-## Paso 1: Inicializar proyecto de React Native
+## Paso 1: Inicializar proyecto de React Native 
 
 Lo primero que haremos será ir a la línea de comandos y haremos lo siguiente:
 
