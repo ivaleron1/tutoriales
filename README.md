@@ -5,7 +5,7 @@ Este proyecto es un ejemplo de cómo crear un chatbot que pueda integrarse fáci
 ## Descripción
 
 El objetivo de este proyecto es crear un chatbot que pueda integrarse fácilmente con diferentes plataformas de mensajería, como aplicaciones móviles, sitios web, etc. Para lograr esto, se ha adoptado un enfoque agnóstico en cuanto a la plataforma, lo que significa que la lógica del chatbot está separada de la implementación específica de la interfaz de usuario.
-Si quieres saber cómo crear un chat bot desde 0 visita nuestra guía de [Cómo crear un chat bot en 10 pasos](link-a-la-guia) 
+Si quieres saber cómo crear un chat bot desde 0 visita nuestra guía de [Cómo crear un chat bot en 10 pasos](./Cómo crear un Chat Bot en 10 pasos.md) 
 
 ## Estructura del Proyecto 🏗️
 
