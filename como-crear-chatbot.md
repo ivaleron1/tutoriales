@@ -21,7 +21,7 @@ Conocimientos de **Java Script y React Native**
 **Android Studio** y un emulador ya descargado desde esta plataforma además de su API 
  
 
-## Paso 1: Inicializar proyecto de React Native 
+## Paso 1: Inicializar proyecto de React Native ⚛️
 
 Lo primero que haremos será ir a la línea de comandos y haremos lo siguiente:
 
@@ -50,7 +50,7 @@ Seleccionamos el entorno donde queremos que se ejecute (en nuestro caso android)
 ![image](https://github.com/ivaleron1/tutoriales/assets/165900790/b167608c-f8c7-40c8-aa9d-90b1dae7c016)
 
 
-## Paso 2: Configurar el proyecto 
+## Paso 2: Configurar el proyecto 🔧
 
 Ya tenemos la aplicación en ejecución así que procederemos con la instalación de los paquetes necesarios que usaremos en este caso. Para no tener que realizar demasiadas instalaciones, nos vamos a dirigir al archivo ```package.json``` que se encuentra en la raiz del proyecto 
 
@@ -70,7 +70,7 @@ Ya tenemos la aplicación en ejecución así que procederemos con la instalació
 ```
 Una vez hagamos hecho eso ejecutamos el comando ```npm install``` de nuevo para que se descarguen las dependencias necesarias
 
-## Paso 3: Preparar la interfaz visual del chat
+## Paso 3: Preparar la interfaz visual del chat 💬
 
 El punto de entrada de la aplicación se encuentra en el archivo ```App.js```.
 Una vez estemos dentro vemos que tenemos el mismo texto que aparece en el emulador dentro de las etiquetas View y Text.
@@ -293,7 +293,7 @@ Para personalizar y mejorar la interfaz visual podemos añadirle vistas y estilo
 ```
 
 
-## Paso 3: Entrenar al modelo de Dialogflow 
+## Paso 4: Entrenar al modelo de Dialogflow 📚
 
 Vamos a entrenar al modelo de Dialogflow que va a ser la plataforma que procese el input del usuario, lo procese y nos devuelva una respuesta adaptada a nuestras necesidades que ya en el próximo punto seremos capaces de conectar con la app de React Native.
 
@@ -323,11 +323,11 @@ También va a ser necesario saber que los parámetros normalmente son entidades 
 
 
 
-## Paso 4: Conectar el modelo con el chat. 
+## Paso 5: Conectar el modelo con el chat. 📡
 
 Este va a ser el paso más largo ya que debemos obtener la clave de la api de dialogflow y toda la lógica que nos falta en React Native.
 
-### 1-Crear API-KEY
+### 1-Crear API-KEY 🗝️
 Accedemos a google cloud con nuestra cuenta y generamos una api key seleccionando el proyecto correspondiente. Una vez la tengamos copiamos lo siguiente en un nuevo archivo llamado **.env.js** dentro de una constante que vamos a exportar a nuestro componente ChatBot
 
 
@@ -359,7 +359,7 @@ export const dialogflowConfig = {
   }
 ```
 
-### 2-Importación de la configuración
+### 2-Importación de la configuración 📥
 ```
 import { dialogflowConfig } from '../../../env';
 
@@ -368,7 +368,7 @@ import { dialogflowConfig } from '../../../env';
 
 
 
-### 3-Hook para cargar la conexión con Dialogflow
+### 3-Hook para cargar la conexión con Dialogflow 🔄
 
 ```
   useEffect(() => {
@@ -382,7 +382,7 @@ import { dialogflowConfig } from '../../../env';
 
 ```
 
-### 4-Definición de método para el envío de mensajes
+### 4-Definición de método para el envío de mensajes ✉️
 
 Definimos ahora el método **onSend()** que recibe un array de mensajes por parámetros. Llamamos al método del hook **setMessages** el cual recibe los mensajes anteriores (esto es algo que hace el hook internamente) y en el cuerpo del método llamamos al método append de GiftedChat para pasarle en el primer argumento los mensajes anteriores y en el segundo los mensages que recibimos por parámetros del "onSend".
 
@@ -403,7 +403,7 @@ const onSend = (messages = []) => {
       };
 ```
 
-### 5-Añadimos la propiedad "onQuickReply"
+### 5-Añadimos la propiedad "onQuickReply" 🚀
 
 En el componente GiftedChat agregamos esta nueva propiedad que nos va a permitir que el bot responda al recibir el input 
 ```
@@ -428,7 +428,7 @@ Primero Le agregamos la respuesa al chat mediante el método que vimos en el pun
     );
   };
 ```
-### 6-Definición del método "handleGoogleResponse()"
+### 6-Definición del método "handleGoogleResponse()" 🖐️
 
 Este método como hemos dicho anteriormente se encarga de hacer algo cuando recibimos la respuesta de la API.
 Por un lado guardamos en una variable denominada "texto" en este caso la respuesta que se encuentra en el objeto result el cual vino en estructura JSON desde la API. Dentro de este objeto accedemos a queryResult -> fulfillementMessages[0] -> text -> text[0].
@@ -569,7 +569,7 @@ Tenemos condiciones adicionales para que en caso de que no se cumpla ninguna de 
     };
 ```
 
-### 7-Definición del método "sendBotResponse()"
+### 7-Definición del método "sendBotResponse()" 📝
 
 En este método nos encargamos de renderizar el texto en el <GiftedChat/> que nos llega por parámetros además de una posible imagen.
 Tenemos el caso de que se nos envíe únicamente el texto, que lo incluimos en el objeto mensaje que definimos, el caso de que nos llegue una imagen la cual se la agregamos al objeto y el caso de que nos lleguen datos adicionales como sería el caso de que queramos añadir varias opciones y presentárselas al usuario.
@@ -600,7 +600,7 @@ const sendBotResponse = (text, img, data) => {
   };
 ```
 
-### 8-Definición del método "Personalización de las burbujas de mensaje"
+### 8-Definición del método "Personalización de las burbujas de mensaje" 🎨
 
 Ya tenemos parte de la lógica báscia lograda, así que vamos a añadir lógica personalizar la presentación visual de los mensajes. Para ello agregamos la propiedad **renderBubble** al "GiftedChat" y le pasamos la referencia de la función que vamos a definir a continuación.
 
@@ -630,7 +630,7 @@ renderBubble = props => {
 ```
 
 
-## CONCLUSIÓN
+## CONCLUSIÓN 🎉
 
 Ya hemos conseguido tener un chat bot funcional con lo básico al que le podremos agregar más cosas proximamente. Aquí tenemos el resultado. 
 
